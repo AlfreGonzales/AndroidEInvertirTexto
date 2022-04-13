@@ -47,8 +47,13 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
     private void invertirPalabra() {
 
         //Una manera directa de invertir una palabra
-        palabra = new StringBuilder(palabra).reverse().toString();
-        TVResultado.setText(palabra);
+        //palabra = new StringBuilder(palabra).reverse().toString();
+        //TVResultado.setText(palabra);
+        String invertido = "";
+        for(int i = this.palabra.length() - 1; i >= 0; i--){
+            invertido += this.palabra.charAt(i);
+        }
+        TVResultado.setText(invertido);
     }
 
     private void recibirInformacion() {
