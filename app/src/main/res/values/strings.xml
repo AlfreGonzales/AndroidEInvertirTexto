@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AE01</string>
+    <string name="hint_Palabra">Ingrese una palabra</string>
+    <string name="btn_procesar">Procesar</string>
+</resources>
