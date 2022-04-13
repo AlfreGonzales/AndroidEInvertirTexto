@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
     private EditText PTPalabra;
     private Button BtnProcesar;
     private String palabra;
-    private EditText TVPalindroma;
+    private TextView TVPalindroma;
 
 
 
@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
         else{
             TVPalindroma.setText("La palabra NO es palindroma");
         }
+        //FIN
     }
 
     private void recibirInformacion() {
