@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
     private EditText PTPalabra;
     private Button BtnProcesar;
     private String palabra;
+    private EditText TVPalindroma;
 
 
 
@@ -54,6 +55,13 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
             invertido += this.palabra.charAt(i);
         }
         TVResultado.setText(invertido);
+
+        if(equals(palabra) == equals(invertido)){
+            TVPalindroma.setText("La palabra es palindroma");
+        }
+        else{
+            TVPalindroma.setText("La palabra NO es palindroma");
+        }
     }
 
     private void recibirInformacion() {
@@ -64,6 +72,7 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
         TVResultado = findViewById(R.id.TVResultado);
         PTPalabra = findViewById(R.id.PTPalabra);
         BtnProcesar = findViewById(R.id.BtnProcesar);
+        TVPalindroma = findViewById(R.id.TVPalindroma);
     }
 
     /*@Override
