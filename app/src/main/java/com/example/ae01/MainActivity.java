@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity /*implements View.OnClickListener*/ {
 
@@ -15,6 +16,8 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
     private Button BtnProcesar;
     private String palabra;
     private TextView TVPalindroma;
+    private Button BtnMensaje;
+    private String invertido;
 
 
 
@@ -43,6 +46,31 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
                 invertirPalabra();
             }
         });
+        BtnMensaje.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mostrarMensaje();
+            }
+        });
+    }
+
+    private void mostrarMensaje() {
+        /*
+        Para mostrar mensjes en pantalla, uds pueden usar
+        sirve para mostrar informacion al usuario acerca de ciertos
+        procesos que hayan pasado, confirmaciones, mostrsar algun mensajes y otros
+        */
+        //estatico
+        /*
+        En toast tiene un metodo llamado makeTest que es donde configuraran
+        lo que se quiere mostrar al usuario, para ello deben pasar estos para:
+        -contexto (ambito) de la pantalla donde se va adibujar ese menasaje
+        -cadena de caracteres: el mensaje a mostrar;
+        -una constante de duracion del mensaje en pantalla para que dure
+        Finalmente deben decirle al Toast que se mustre cn esa configuracion
+        y para ello usan el metodo o evento .show()
+         */
+        Toast.makeText(this,evaluarPalindroma(),Toast.LENGTH_LONG).show();
     }
 
     private void invertirPalabra() {
@@ -50,13 +78,13 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
         //Una manera directa de invertir una palabra
         //palabra = new StringBuilder(palabra).reverse().toString();
         //TVResultado.setText(palabra);
-        String invertido = "";
+        invertido = "";
         for(int i = this.palabra.length() - 1; i >= 0; i--){
             invertido += this.palabra.charAt(i);
         }
         TVResultado.setText(invertido);
 
-        if(equals(palabra) == equals(invertido)){
+        if(palabra.equals(invertido)){
             TVPalindroma.setText("La palabra es palindroma");
         }
         else{
@@ -69,11 +97,20 @@ public class MainActivity extends AppCompatActivity /*implements View.OnClickLis
         palabra = PTPalabra.getText().toString();
     }
 
+    private String evaluarPalindroma(){
+        String mensaje = "No es palindromo";
+        if(palabra.equals(invertido)){
+            mensaje = "Es palindromo";
+        }
+        return mensaje;
+    }
+
     private void iniciarVistas() {
         TVResultado = findViewById(R.id.TVResultado);
         PTPalabra = findViewById(R.id.PTPalabra);
         BtnProcesar = findViewById(R.id.BtnProcesar);
         TVPalindroma = findViewById(R.id.TVPalindroma);
+        BtnMensaje = findViewById(R.id.BtnMensaje);
     }
 
     /*@Override

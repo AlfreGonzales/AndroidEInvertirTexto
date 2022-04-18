@@ -10,7 +10,7 @@
         android:id="@+id/TVResultado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="60dp"
         android:text="Hello World!"
         app:layout_constraintStart_toStartOf="@+id/PTPalabra"
         app:layout_constraintTop_toBottomOf="@+id/PTPalabra" />
@@ -32,7 +32,8 @@
         android:id="@+id/BtnProcesar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="@color/teal_700"
         android:text="@string/btn_procesar"
         app:layout_constraintStart_toStartOf="@+id/TVResultado"
         app:layout_constraintTop_toBottomOf="@+id/TVResultado" />
@@ -41,8 +42,19 @@
         android:id="@+id/TVPalindroma"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="171dp"
-        tools:layout_editor_absoluteY="449dp" />
+        app:layout_constraintStart_toStartOf="@+id/BtnProcesar"
+        app:layout_constraintTop_toBottomOf="@+id/BtnProcesar" />
+
+    <Button
+        android:id="@+id/BtnMensaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="@color/teal_700"
+        android:text="MENSAJE"
+        app:layout_constraintStart_toStartOf="@+id/TVPalindroma"
+        app:layout_constraintTop_toBottomOf="@+id/TVPalindroma" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
